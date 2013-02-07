@@ -32,9 +32,9 @@ iuab={
       else{id=$('#'+id)};
     
     // head //
-    var iuabHead = $('<div class="container" id="iuabHead">').appendTo(id);
+    var iuabContainer = $('<div class="container" id="iuabHead">').appendTo(id);
     //head[0].style.margin=10;
-    var navHead = $('<div class="navbar navbar-inverse pull-left">').appendTo(iuabHead);
+    var navHead = $('<div class="navbar navbar-inverse">').appendTo(iuabContainer);
     var innerHead = $('<div class="navbar-inner">').appendTo(navHead);
     var folders = Object.getOwnPropertyNames(iuab.stuff);
     //var brand = $('<a class="brand" href="#">iUAB</a>').appendTo(innerHead);
@@ -45,11 +45,11 @@ iuab={
     }
 
     // body //
-    var iuabBody = $('<div class="container" id="iuabBody">').appendTo(id);
-    var iuabBodyDiv = $('<div id="iuabBodyDiv">').appendTo(iuabBody);
+    //var iuabBody = $('<div class="container" id="iuabBody">').appendTo(id);
+    var iuabBody = $('<div id="iuabBody">').appendTo(iuabContainer);
     var iuabBodies=[];
     for(var i in folders){
-     iuabBodies[i]=$('<div id="iuabBody_'+i+'">').html(iuab.stuff[folders[i]]).appendTo(iuabBodyDiv);
+     iuabBodies[i]=$('<div id="iuabBody_'+i+'">').html(iuab.stuff[folders[i]]).appendTo(iuabBody);
     }
     var n = navLi.length
     for(var i in navLi){

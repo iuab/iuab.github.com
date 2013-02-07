@@ -46,7 +46,7 @@ iuab={
 
     // body //
     var iuabBody = $('<div class="container" id="iuabBody">').appendTo(id);
-    var iuabBodyDiv = $('<div class="hero-unit" id="iuabBodyDiv">').appendTo(iuabBody);
+    var iuabBodyDiv = $('<div id="iuabBodyDiv">').appendTo(iuabBody);
     var iuabBodies=[];
     for(var i in folders){
      iuabBodies[i]=$('<div id="iuabBody_'+i+'">').html(iuab.stuff[folders[i]]).appendTo(iuabBodyDiv);

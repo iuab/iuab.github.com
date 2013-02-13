@@ -29,15 +29,15 @@ wApps.manifest.apps.push(
 
     {
     "name": "ET callHome",
-    "description": "a little coding on the anifest can go a long way.",
+    "description": "a little coding on the manifest can go a long way.",
     "url": "https://code.google.com/p/jmat/", // home page of App
     "namespace":'jmat',
     buildUI:function(id){
         this.require('https://jmat.googlecode.com/git/jmat.js', //'http://localhost:8888/jmat/jmat.js',
             function(){
                 var t = setInterval(
-                    function(){jmat.plot(id,jmat.rand(1000),jmat.rand(5000))},
-                    1000
+                    function(){jmat.plot(id,jmat.rand(100),jmat.rand(100))},
+                    5000
                 );
             }
         )}

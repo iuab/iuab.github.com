@@ -36,7 +36,7 @@ wApps.manifest.apps.push(
         this.require('https://jmat.googlecode.com/git/jmat.js', //'http://localhost:8888/jmat/jmat.js',
             function(){
                 var t = setInterval(
-                    function(){jmat.plot(id,jmat.rand(1000),jmat.rand(1000))},
+                    function(){jmat.plot(id,jmat.rand(1000),jmat.rand(5000))},
                     1000
                 );
             }
@@ -84,6 +84,10 @@ wApps.manifest.bodies={
     },
     "About":{
         html:'<h1>wApps</h1>This is an experiment in loosening the architecture of a webApp store to achieve a deeper integration between autonomously developed components.',
+        Div:{}
+    },
+    "lala":{
+        html:'<h1>lala</h1>this is Lala.',
         Div:{}
     }
 };

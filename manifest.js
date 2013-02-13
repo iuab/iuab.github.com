@@ -21,22 +21,26 @@ wApps.manifest.apps.push(
     "url": "https://code.google.com/p/jmat/", // home page of App
     "namespace":'jmat',
     buildUI:function(id){
-        this.require('https://jmat.googlecode.com/git/jmat.js',
-            function(){
-                $('<div id="'+id+'_s3dbLogin">').appendTo($('#'+id));// create login div
-                var url = 'https://uab.s3db.org/s3db'
-                jmat.s3db.UI.login(
-                    url,
-                    function(){
-                        wApps.s3db=jmat.s3db.info;
-                        console.log('s3db login successful :-)');
-                        $('<div>Logged in at '+url+': <p><smal><em>'+JSON.stringify(wApps.s3db.uid)+'</em></small></p>').appendTo($('#'+id));
-                    },
-                    id+'_s3dbLogin'
-                )
-                //console.log(id);
-            });
+        this.require('https://jmat.googlecode.com/git/jmat.js', //'http://localhost:8888/jmat/jmat.js',
+            function(){jmat.s3db.UI.wApp(id,'https://uab.s3db.org/s3db')}
+            );
         }
+    },
+
+    {
+    "name": "ET callHome",
+    "description": "a little coding on the anifest can go a long way.",
+    "url": "https://code.google.com/p/jmat/", // home page of App
+    "namespace":'jmat',
+    buildUI:function(id){
+        this.require('https://jmat.googlecode.com/git/jmat.js', //'http://localhost:8888/jmat/jmat.js',
+            function(){
+                var t = setInterval(
+                    function(){jmat.plot(id,jmat.rand(1000),jmat.rand(1000))},
+                    1000
+                );
+            }
+        )}
     },
 
     {
@@ -85,7 +89,13 @@ wApps.manifest.bodies={
 };
 
 
-for(var i in wApps.manifest.apps){wApps.manifest.apps[i].require=wApps.load}
+for(var i in wApps.manifest.apps){
+    wApps.manifest.apps[i].require=function(url,fun){
+        if(!window[this.namespace]){
+            wApps.load(url,fun)
+        }else(fun());
+    }
+}
 
 
 

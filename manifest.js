@@ -4,8 +4,8 @@
 
 // 1) BRANDING - the icon and link in the upper left corner
 wApps.manifest.brand={
-    pic:'https://raw.github.com/iuab/manifest/master/iUAB.png',
-    url:'https://github.com/iuab/manifest#iuab'
+    pic:'https://raw.github.com/iuab/iuab.github.com/master/iUAB.png',
+    url:'https://github.com/iuab/iuab.github.com#iuab'
 };
 
 /*

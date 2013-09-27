@@ -13,6 +13,13 @@ wApps.manifest.brand={
 // 2) TABS - the navigation tabs in the head of wApps. 
 //    The code manage "myApps", "Store" and "People",
 //    the rest is up to you.
+*/
+
+wApps.manifest.tabs.About.html='debugging iUAB';
+
+/*
+
+
 wApps.manifest.tabs={
     "myApps":{
         html:'Apps you selected from the AppStore ...',
